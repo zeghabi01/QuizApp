@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;  
+    background:#008586;
+}
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.customBox {
+    max-width: 700px;
+    background: #ffffff;
+    margin: 40px auto;
+    border-radius: 10px;
+    padding: 25px;
+    animation: PutIt 1s ease;
+}
+@keyframes PutIt {
+    0% {
+        transform: translateX(40px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+
+    }
+}
+.customBox p {
+    color: black;
+    font-size: 15px;
+}
+.customBox .btn {
+    outline: none;
+}
+.startContainer.customBox .numberQuestions {
+    font-weight: bold;
+}
+
+
+.quizContainer .questionNumber {
+    color: #008586;
+    font-weight: bold;
+    margin-bottom: 8px;
+
+}
+.quizContainer .ligne {
+    background: #CACCCA;
+    height: 2px;
+    margin-bottom: 8px;
+    margin-top: 15px;
+}
+.quizContainer .ligneProgress {
+    background: #CACCCA;
+    height: 10px;
+    margin-bottom: 8px;
+    margin-top: 15px;
+    position: relative;
+}
+.quizContainer .ligneProgress div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: green;
+    height: 100%;
+    width: 0px;
+}
+
+.quizContainer .question {
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+.quizContainer .choices .option {
+    background:#CACCCA;
+    border-radius: 10px;
+    margin: 5px;
+    margin-bottom: 8px;
+    padding: 10px;
+    opacity: 0;
+    animation: fadeIn 0.5s  ease forwards;
+    position: relative;
+    overflow: hidden;
+}
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.quizContainer .choices .option.correct::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: green;
+    z-index: -1;
+    animation: Slide 0.5s ease forwards;
+}
+.quizContainer .choices .option.wrong,
+.quizContainer .choices .option.correct {
+    color: #ffffff;
+}
+.quizContainer .choices .option.DoneAnswered {
+    pointer-events: none;
+}
+.quizContainer .choices .option.wrong::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: red;
+    z-index: -1;
+    animation: Slide 0.5s ease forwards;
+}
+@keyframes Slide {
+    0%{
+        transform: translate(-100%);
+    }100%{
+        transform: translate(0%);
+    }
+}
+.quizContainer .btn {
+    margin-top: 10px;
+}
+.quizContainer .CorrectWrong {
+    margin-top: 15px;
+}
+.quizContainer .CorrectWrong div {
+    background: #CACCCA;
+    width: 40px;
+    height: 40px;
+    border-radius: 25px;
+    display: inline-block;
+    margin-left: 4px;
+}
+.quizContainer .CorrectWrong div.correct {
+    background-color: green;
+}
+.quizContainer .CorrectWrong div.wrong {
+    background-color: red;
+
+}
+.recordContainer .quizR {
+    font-size: 40px;
+    text-align: center;
+    color:  #008586;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.startContainer p {
+    font-weight: bold;
+}
+
+.recordContainer .tableResult p {
+    font-size: 25px;
+}
+.recordContainer .tableResult span {
+    font-weight: bold;
+}
+.hide {
+    display: none;
+}
+
+@media(max-width: 767px) {
+    .recordContainer .buttons .btn {
+        margin-bottom: 15px;
+    }
+}
